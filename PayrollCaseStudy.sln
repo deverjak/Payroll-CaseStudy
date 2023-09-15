@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll.RestApi", "Payroll.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll.RestApi.Tests", "Payroll.RestApi.Tests\Payroll.RestApi.Tests.csproj", "{DE7AA1A3-B1AF-443D-8F2C-C45E5FB5FD0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll.Application", "Payroll.Application\Payroll.Application.csproj", "{A290242C-B939-4789-8EA0-A6DAE2D5054E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,13 @@ Global
 		{DE7AA1A3-B1AF-443D-8F2C-C45E5FB5FD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE7AA1A3-B1AF-443D-8F2C-C45E5FB5FD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE7AA1A3-B1AF-443D-8F2C-C45E5FB5FD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A6F293-1BBB-44EB-9BA9-0DFB02D7985B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A6F293-1BBB-44EB-9BA9-0DFB02D7985B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A6F293-1BBB-44EB-9BA9-0DFB02D7985B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A6F293-1BBB-44EB-9BA9-0DFB02D7985B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A290242C-B939-4789-8EA0-A6DAE2D5054E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A290242C-B939-4789-8EA0-A6DAE2D5054E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A290242C-B939-4789-8EA0-A6DAE2D5054E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A290242C-B939-4789-8EA0-A6DAE2D5054E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
