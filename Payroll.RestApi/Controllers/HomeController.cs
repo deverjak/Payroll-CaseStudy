@@ -6,6 +6,7 @@ namespace Payroll.RestApi.Controllers;
 [Route("")]
 public class HomeController : ControllerBase
 {
+    [HttpGet]
     public IActionResult Get()
     {
         return Ok(new { project = "Hello world" });
