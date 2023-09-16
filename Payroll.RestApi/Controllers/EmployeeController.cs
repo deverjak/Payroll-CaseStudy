@@ -9,6 +9,11 @@ namespace Payroll.RestApi.Controllers
     [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
     {
+        private IEmployeeRepository _employeeRepository;
+        public EmployeeController(IEmployeeRepository employeeRepository)
+        {
+            _employeeRepository = employeeRepository;
+        }
         [HttpPost("add")]
         public IActionResult SaveEmployee([FromBody] EmployeeModel model)
         {
@@ -18,7 +23,7 @@ namespace Payroll.RestApi.Controllers
             }
 
             var employee = new Employee(model.EmployeeId, model.Name, model.Salary);
-            InMemoryDatabase.AddEmployee(model.EmployeeId, employee);
+            _employeeRepository.SaveEmployee(employee);
             return Ok();
         }
     }

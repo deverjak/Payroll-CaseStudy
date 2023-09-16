@@ -16,5 +16,9 @@ namespace Payroll.Domain
         {
             return _name;
         }
+        public Guid GetId()
+        {
+            return _employeeId;
+        }
     }
 }
