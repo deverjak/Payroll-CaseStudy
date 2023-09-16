@@ -10,14 +10,14 @@ public class HomePageTest
         using var factory = new WebApplicationFactory<Startup>();
         var client = factory.CreateClient();
 
-        using var request = new HttpRequestMessage(HttpMethod.Get, new Uri("", UriKind.Relative));
+        using var request = new HttpRequestMessage(HttpMethod.Get, new Uri("api", UriKind.Relative));
         request.Headers.Accept.ParseAdd("application/json");
 
         var response = await client.SendAsync(request);
 
         Assert.True(
-            response.IsSuccessStatusCode,
-            $"Actual status code: {response.StatusCode}.");
+           response.IsSuccessStatusCode,
+           $"Actual status code: {response.StatusCode}.");
         Assert.Equal("application/json",
             response.Content.Headers.ContentType?.MediaType);
     }
