@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc.Controllers;
+using Payroll.Application;
 
 namespace Payroll.RestApi
 {
@@ -9,7 +9,7 @@ namespace Payroll.RestApi
         {
             services.AddSwaggerGen();
             services.AddControllers();
-            services.AddSingleton<IControllerActivator>(new CustomControllerActivator());
+            services.AddSingleton<IEmployeeRepository>(new InMemoryEmployeeRepository());
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
