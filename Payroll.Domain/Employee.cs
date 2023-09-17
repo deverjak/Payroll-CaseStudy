@@ -1,24 +1,30 @@
+using System.Text.Json;
+
 namespace Payroll.Domain
 {
     public class Employee
     {
-        private Guid _employeeId;
-        private string _name;
-        private int _salary;
+        public Guid EmployeeId { get; }
+        public string Name { get; }
+        public int Salary { get; }
         public Employee(Guid employeeId, string name, int salary)
         {
-            _employeeId = employeeId;
-            _name = name;
-            _salary = salary;
-        }
-
-        public string PrintName()
-        {
-            return _name;
+            EmployeeId = employeeId;
+            Name = name;
+            Salary = salary;
         }
         public Guid GetId()
         {
-            return _employeeId;
+            return EmployeeId;
+        }
+
+        public string ToJson()
+        {
+            var options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            };
+            return JsonSerializer.Serialize(this, options);
         }
     }
 }

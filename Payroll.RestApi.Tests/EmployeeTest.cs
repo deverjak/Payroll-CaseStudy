@@ -8,7 +8,7 @@ namespace Payroll.RestApi.Tests;
 public class EmployeeTest
 {
     [Fact]
-    public async Task DataAreSaveToInMemoryDb()
+    public async Task SendDataAreSaveToInMemoryDb()
     {
         using var factory = new WebApplicationFactory<Startup>();
         var client = factory.CreateClient();
@@ -28,13 +28,14 @@ public class EmployeeTest
 
         var response = await client.SendAsync(request);
         var responseBody = await response.Content.ReadAsStringAsync();
+        var savedEmployee = InMemoryDatabase.GetEmployee(employeeId);
 
         Assert.True(
             response.IsSuccessStatusCode,
             $"Actual status code: {response.StatusCode}.");
-
-        var savedEmployee = InMemoryDatabase.GetEmployee(employeeId);
-        Assert.Equal("John Smith", savedEmployee.PrintName());
+        Assert.Equal("application/json",
+            response.Content.Headers.ContentType?.MediaType);
+        Assert.Equal("John Smith", savedEmployee.Name);
 
     }
 }

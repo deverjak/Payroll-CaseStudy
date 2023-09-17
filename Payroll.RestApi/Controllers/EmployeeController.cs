@@ -24,7 +24,8 @@ namespace Payroll.RestApi.Controllers
 
             var employee = new Employee(model.EmployeeId, model.Name, model.Salary);
             _employeeRepository.SaveEmployee(employee);
-            return Ok();
+
+            return Ok(employee.ToJson());
         }
     }
 }
